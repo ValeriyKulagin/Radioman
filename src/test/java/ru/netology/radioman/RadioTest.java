@@ -18,15 +18,14 @@ public class RadioTest {
             "Boundary value, 10, 0",
             "Invalid value, 18, 0",
             "Invalid value, -9, 0"
+
     })
-
-    public void setSelectStation(String nameTest, int inputSelectStation, int expectedStation) {
+    public void setCurrentStation(String nameTest, int currentStation, int expectedStation) {
         Radio radio = new Radio();
-        radio.setSelectStation(inputSelectStation);
+        radio.setCurrentStation(currentStation);
         Assertions.assertEquals(radio.getCurrentStation(), expectedStation);
-
-
     }
+
 
     @ParameterizedTest
     @CsvSource({
