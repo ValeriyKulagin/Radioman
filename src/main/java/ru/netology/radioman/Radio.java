@@ -13,6 +13,9 @@ public class Radio {
     }
 
     public void setCurrentStation(int currentStation) {
+        if (currentStation < minStation || currentStation > maxStation) {
+            return;
+        }
         this.currentStation = currentStation;
     }
 
