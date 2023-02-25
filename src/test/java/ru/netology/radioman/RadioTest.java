@@ -64,8 +64,8 @@ public class RadioTest {
             "Valid value, 5, 6",
             "Boundary value, 0, 1",
             "Boundary value, 1, 2",
-            "Boundary value, 9, 10",
-            "Boundary value, 10, 10",
+            "Boundary value, 99, 100",
+            "Boundary value, 100, 100",
 
     })
 
@@ -81,13 +81,27 @@ public class RadioTest {
             "Valid value, 5, 4",
             "Boundary value, 0, 0",
             "Boundary value, 1, 0",
-            "Boundary value, 10, 9",
-            "Boundary value, 9, 8",
+            "Boundary value, 100, 99",
+            "Boundary value, 99, 98",
     })
     public void setDecreaseVolume(String nameTest, int currentVolume, int expectedVolume) {
         Radio radio = new Radio();
         radio.setCurrentVolume(currentVolume);
         radio.decreaseVolume();
         Assertions.assertEquals(radio.getCurrentVolume(), expectedVolume);
+    }
+
+    @Test
+    public void shouldSetRangeOfStation() {
+        Radio radio = new Radio(50);
+        Assertions.assertEquals(49, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getMinStation());
+    }
+
+    @Test
+    public void shouldNotSetRangeOfStation() {
+        Radio radio = new Radio();
+        Assertions.assertEquals(9, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getMinStation());
     }
 }
