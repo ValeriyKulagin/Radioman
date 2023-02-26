@@ -1,11 +1,10 @@
 package ru.netology.radioman;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 
 public class Radio {
@@ -43,7 +42,7 @@ public class Radio {
         this.currentStation = currentStation;
     }
 
-        public void nextStation() {
+    public void nextStation() {
         if (maxStation == currentStation) {
             this.currentStation = minStation;
         } else {
@@ -63,7 +62,7 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-        public void increaseVolume() {
+    public void increaseVolume() {
         if (currentVolume == maxVolume) {
             return;
         } else {
