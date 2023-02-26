@@ -37,6 +37,7 @@
                 <configuration>
                     <failIfNoTests>true</failIfNoTests>
                 </configuration>
+
             </plugin>
 
             <plugin>
@@ -72,7 +73,7 @@
                                         <limit>
                                             <counter>BRANCH</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>40%</minimum>
+                                            <minimum>100%</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
@@ -81,6 +82,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
